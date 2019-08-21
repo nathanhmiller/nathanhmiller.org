@@ -54,8 +54,14 @@
 	
 	<p> <b> BLP Contraction Mapping </b> </p>
 
-	<p> Fast code to be uploaded soon soon.</p> 		
+	<p> <a href="contrMap.zip">C Code</a> to implement the contraction mapping for random coefficients logit models of demand. There are three versions:</p>
 		
+		<ul>
+		<li> contrMap_blp_BHRW uses the speed-enhancing mathematical simplification obtained in the Brunner, Heiss, Romahn, and Weiser (2017) working paper, hereafter BHRW, for standard BLP-style models.
+		<li> contrMap_rcnl_BHRW modifies the BHRW simplification for an random coefficients nested logit (RCNL) model in which the outside good is in its own nest.  The speed of convergence is damped following Grigolon and Verboven (2014 ReStat).
+		<li> contrMap_rcnl also is for the RCNL model but does not use the BHRW simplification. Thus it is about 3x slower. With very small datasets, such as the pseudo cereals data of Nevo (2000), the speed of the BHRW algorithms might lead to computational instability on some computers.    
+		</ul>	
+	The RCNL functions nest a standard BLP specification of demand if the nesting parameter is set to zero. However, more computational steps are used, so greater is speed is available from the BLP function.		
 	
          </td>
       </tr>
