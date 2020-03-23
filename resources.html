@@ -52,17 +52,6 @@
 		<li><a href="pp_code.zip">R Code</a> with functions that allow for calibration and merger simulation (pp_functions.R) and a short script that shows how to use the functions (pp_starter.R).  Mergers often are profitable in the Perry and Porter (1985) version of the Cournot model.
 		</ul>
 	
-	<p> <b> BLP Contraction Mapping </b> </p>
-
-	<p> <a href="contrMap.zip">C Code</a> to implement the contraction mapping for random coefficients logit models of demand. There are three versions:</p>
-		
-		<ul>
-		<li> contrMap_blp_BHRW uses the speed-enhancing mathematical simplification suggested in the Brunner, Heiss, Romahn, and Weiser (2017) working paper, hereafter BHRW, for standard BLP-style models.
-		<li> contrMap_rcnl_BHRW modifies the BHRW simplification for a random coefficients nested logit (RCNL) model in which the outside good is in its own nest.  The speed of convergence is damped as shown to be necessary by Grigolon and Verboven (2014 ReStat).
-		<li> contrMap_rcnl also is for the RCNL model but does not use the BHRW simplification. Thus it is about 3x slower. With very small datasets, such as the pseudo cereals data of Nevo (2000), the speed of the BHRW algorithms might lead to computational instability on some computers.    
-		</ul>	
-	The code must be compiled before use with Matlab.  The RCNL functions can be used with more standard (non-nested) BLP specifications if the nesting parameter is set to zero. However, more computational steps are required to accommodate the RCNL, so if the model does not have a nesting structure then the BLP function will be faster. A useful reference for all things BLP is the Conlon and Gortmaker (2019) working paper titled "Best Practices for Differentiated Products Demand Estimation." It proposes using an accelerated fixed point algorithm such as SQUAREM. Based on various comparisons in the literature, the approach of using compiled C code with the BHRW simplification appears to deliver speed that is comparable to SQUAREM, though I'm not aware of any explicit comparisons.
-	
          </td>
       </tr>
       
